@@ -9,10 +9,10 @@
   "package": {
     "owner": "zhtwangk",
     "name": "schema-guard",
-    "version": "sha-7ec29f110d08",
-    "registry_ref": "zhtwangk/schema-guard@sha-7ec29f110d08",
-    "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08",
-    "source_url": "https://github.com/ZHTWangK/schema-guard-runx-skill/tree/7ec29f110d08d1fad4e3a07c93e115238fe2432e",
+    "version": "sha-b1dff50d9854",
+    "registry_ref": "zhtwangk/schema-guard@sha-b1dff50d9854",
+    "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-b1dff50d9854",
+    "source_url": "https://github.com/ZHTWangK/schema-guard-runx-skill/tree/b1dff50d9854163e2d6471f224daed549bce4bb9",
     "pr_url": "https://github.com/runxhq/runx/pull/234",
     "pr_head_commit": "cf11b84f43b645093568d3d844a977f16ccb676e",
     "x_yaml": "https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/X.yaml",
@@ -59,8 +59,8 @@
       "kind": "url_publish",
       "command": "curl https://api.runx.ai/v1/index",
       "status": "passed",
-      "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08",
-      "source_provenance": "github:zhtwangk/schema-guard-runx-skill@7ec29f110d08d1fad4e3a07c93e115238fe2432e",
+      "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-b1dff50d9854",
+      "source_provenance": "github:zhtwangk/schema-guard-runx-skill@b1dff50d9854163e2d6471f224daed549bce4bb9",
       "hosted_harness_status": "not_recorded"
     },
     {
@@ -102,6 +102,35 @@
       }
     ],
     "proposal_status": "proposed"
+  },
+  "dogfood": {
+    "package": "local install of schema-guard",
+    "input": {
+      "current_schema": "object with id and name",
+      "proposed_schema": "additive object with id, name, and optional email",
+      "sample_payloads": 1,
+      "compatibility_policy": {
+        "breaking_allowed": false,
+        "required_fields": [
+          "id",
+          "name"
+        ],
+        "versioning_rule": "minor_for_additive_major_for_breaking"
+      }
+    },
+    "command": "env RUNX_SANDBOX_ALLOW_DECLARED_POLICY_ONLY=local npx runx skill .runx/install-check/schema-guard/local/schema-guard/sha-d99e5d4007bc --json",
+    "receipt_ref": "runx:receipt:sha256:371ae1c3624e1df4e9faa23a8a8da25d4d4319a88d402601cae29eae39870c5e",
+    "verify_verdict": "valid with --allow-local-development-signatures",
+    "harness_cases": [
+      {
+        "name": "schema-guard-additive-compatible",
+        "status": "sealed"
+      },
+      {
+        "name": "schema-guard-breaking-refused",
+        "status": "sealed"
+      }
+    ]
   },
   "known_gaps": [
     "runx public registry reports hosted harness status as not_recorded for the URL-published listing.",

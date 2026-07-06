@@ -11,8 +11,8 @@
 
 ## Public artifacts
 
-- Registry listing: https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08
-- Public source: https://github.com/ZHTWangK/schema-guard-runx-skill/tree/7ec29f110d08d1fad4e3a07c93e115238fe2432e
+- Registry listing: https://runx.ai/x/zhtwangk/schema-guard@sha-b1dff50d9854
+- Public source: https://github.com/ZHTWangK/schema-guard-runx-skill/tree/b1dff50d9854163e2d6471f224daed549bce4bb9
 - Upstream PR: https://github.com/runxhq/runx/pull/234
 - Raw `X.yaml`: https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/X.yaml
 - Raw `SKILL.md`: https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/SKILL.md

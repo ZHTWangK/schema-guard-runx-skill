@@ -22,16 +22,16 @@
   },
   "registry": {
     "url_publish_status": "success",
-    "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08",
+    "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-b1dff50d9854",
     "api_read_status": "success",
     "hosted_harness_status": "not_recorded",
     "owner": "zhtwangk",
     "package": "schema-guard",
-    "version": "sha-7ec29f110d08"
+    "version": "sha-b1dff50d9854"
   },
   "github": {
     "source_repo": "https://github.com/ZHTWangK/schema-guard-runx-skill",
-    "source_commit": "7ec29f110d08d1fad4e3a07c93e115238fe2432e",
+    "source_commit": "b1dff50d9854163e2d6471f224daed549bce4bb9",
     "upstream_pr": "https://github.com/runxhq/runx/pull/234",
     "upstream_pr_head_commit": "cf11b84f43b645093568d3d844a977f16ccb676e",
     "raw_x_yaml": "https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/X.yaml",
