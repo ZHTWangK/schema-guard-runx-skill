@@ -1,0 +1,111 @@
+{
+  "schema": "frantic.evidence.v1",
+  "summary": "schema-guard is a published runx community skill that checks JSON-schema-like contract changes, validates sample payloads, refuses breaking changes under policy, and emits publish_schema_proposal only when compatible.",
+  "bounty": {
+    "number": 84,
+    "title": "runx skill: schema guard",
+    "url": "https://gofrantic.com/bounties/p-b40de294b5"
+  },
+  "package": {
+    "owner": "zhtwangk",
+    "name": "schema-guard",
+    "version": "sha-7ec29f110d08",
+    "registry_ref": "zhtwangk/schema-guard@sha-7ec29f110d08",
+    "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08",
+    "source_url": "https://github.com/ZHTWangK/schema-guard-runx-skill/tree/7ec29f110d08d1fad4e3a07c93e115238fe2432e",
+    "pr_url": "https://github.com/runxhq/runx/pull/234",
+    "pr_head_commit": "cf11b84f43b645093568d3d844a977f16ccb676e",
+    "x_yaml": "https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/X.yaml",
+    "skill_md": "https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/SKILL.md"
+  },
+  "observations": [
+    {
+      "kind": "runx_cli_version",
+      "command": "npx runx --version",
+      "status": "passed",
+      "output": "runx-cli 0.6.16"
+    },
+    {
+      "kind": "github_star_required_repo",
+      "repo": "runxhq/runx",
+      "status": "passed",
+      "evidence": "gh api user/starred/runxhq/runx -i returned HTTP 204"
+    },
+    {
+      "kind": "local_harness",
+      "command": "env RUNX_SANDBOX_ALLOW_DECLARED_POLICY_ONLY=local npx runx harness runx/skills/schema-guard --json",
+      "status": "passed",
+      "case_names": [
+        "schema-guard-additive-compatible",
+        "schema-guard-breaking-refused"
+      ],
+      "receipt_ids": [
+        "sha256:5b1ba6c4ea9289a2ca67e7e9aa874b259136f78ef1fbe67a3b3d6b22a4f5dacb",
+        "sha256:018e829c563d8ae4e5bdc5b45051d4a806bf19494cfd1aff6204b6e3299e8068"
+      ]
+    },
+    {
+      "kind": "local_registry_publish",
+      "command": "env RUNX_SANDBOX_ALLOW_DECLARED_POLICY_ONLY=local npx runx registry publish runx/skills/schema-guard/SKILL.md --registry-dir .runx/registry/local --json",
+      "status": "passed",
+      "registry_ref": "local/schema-guard@sha-d99e5d4007bc",
+      "harness_status": "passed",
+      "harness_cases": [
+        "schema-guard-additive-compatible",
+        "schema-guard-breaking-refused"
+      ]
+    },
+    {
+      "kind": "url_publish",
+      "command": "curl https://api.runx.ai/v1/index",
+      "status": "passed",
+      "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08",
+      "source_provenance": "github:zhtwangk/schema-guard-runx-skill@7ec29f110d08d1fad4e3a07c93e115238fe2432e",
+      "hosted_harness_status": "not_recorded"
+    },
+    {
+      "kind": "clean_install",
+      "command": "npx runx add local/schema-guard@sha-d99e5d4007bc --registry .runx/registry/local --to .runx/install-check/schema-guard --json",
+      "status": "passed",
+      "installed_files": [
+        "SKILL.md",
+        "X.yaml",
+        "run.mjs"
+      ]
+    },
+    {
+      "kind": "dogfood",
+      "package": "local install of schema-guard",
+      "command": "env RUNX_SANDBOX_ALLOW_DECLARED_POLICY_ONLY=local npx runx skill .runx/install-check/schema-guard/local/schema-guard/sha-d99e5d4007bc ... --json",
+      "status": "sealed",
+      "receipt_ref": "runx:receipt:sha256:371ae1c3624e1df4e9faa23a8a8da25d4d4319a88d402601cae29eae39870c5e",
+      "verify_verdict": "valid with --allow-local-development-signatures",
+      "harness_cases": [
+        {
+          "name": "schema-guard-additive-compatible",
+          "status": "sealed"
+        },
+        {
+          "name": "schema-guard-breaking-refused",
+          "status": "sealed"
+        }
+      ]
+    }
+  ],
+  "compatibility": {
+    "status": "compatible",
+    "breaking_changes": [],
+    "validation_results": [
+      {
+        "sample_index": 0,
+        "valid": true
+      }
+    ],
+    "proposal_status": "proposed"
+  },
+  "known_gaps": [
+    "runx public registry reports hosted harness status as not_recorded for the URL-published listing.",
+    "The available dogfood receipt is a local-development receipt, not a hosted public receipt.",
+    "runx CLI authenticated publish/login could not be completed in this environment because the CLI rejected the DNS-resolved api.runx.ai address as non-public."
+  ]
+}

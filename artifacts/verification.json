@@ -1,0 +1,40 @@
+{
+  "schema": "runx.schema_guard.verification.v1",
+  "runx_cli_version": "runx-cli 0.6.16",
+  "local_harness": {
+    "status": "passed",
+    "case_count": 2,
+    "assertion_error_count": 0,
+    "case_names": [
+      "schema-guard-additive-compatible",
+      "schema-guard-breaking-refused"
+    ],
+    "receipt_ids": [
+      "sha256:5b1ba6c4ea9289a2ca67e7e9aa874b259136f78ef1fbe67a3b3d6b22a4f5dacb",
+      "sha256:018e829c563d8ae4e5bdc5b45051d4a806bf19494cfd1aff6204b6e3299e8068"
+    ]
+  },
+  "local_receipt_verify": {
+    "receipt_id": "sha256:371ae1c3624e1df4e9faa23a8a8da25d4d4319a88d402601cae29eae39870c5e",
+    "valid": true,
+    "signature_mode": "local-development",
+    "verify_command": "npx runx verify --receipt .runx/receipts/sha256-371ae1c3624e1df4e9faa23a8a8da25d4d4319a88d402601cae29eae39870c5e.json --allow-local-development-signatures --json"
+  },
+  "registry": {
+    "url_publish_status": "success",
+    "public_url": "https://runx.ai/x/zhtwangk/schema-guard@sha-7ec29f110d08",
+    "api_read_status": "success",
+    "hosted_harness_status": "not_recorded",
+    "owner": "zhtwangk",
+    "package": "schema-guard",
+    "version": "sha-7ec29f110d08"
+  },
+  "github": {
+    "source_repo": "https://github.com/ZHTWangK/schema-guard-runx-skill",
+    "source_commit": "7ec29f110d08d1fad4e3a07c93e115238fe2432e",
+    "upstream_pr": "https://github.com/runxhq/runx/pull/234",
+    "upstream_pr_head_commit": "cf11b84f43b645093568d3d844a977f16ccb676e",
+    "raw_x_yaml": "https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/X.yaml",
+    "raw_skill_md": "https://raw.githubusercontent.com/ZHTWangK/runx/cf11b84f43b645093568d3d844a977f16ccb676e/skills/schema-guard/SKILL.md"
+  }
+}
